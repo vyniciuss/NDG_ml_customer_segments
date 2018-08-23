@@ -1,44 +1,18 @@
-# Content: Unsupervised Learning
-## Project: Creating Customer Segments
+# Criando Segmentos de Cliente
 
-### Install
+O projeto faz parte do curso Engenheiro de Machine Learning
 
-This project requires **Python 2.7** and the following Python libraries installed:
+![alt text](https://github.com/vyniciuss/NDG_ml_customer_segments/blob/master/segmentos.jpg)
 
-- [NumPy](http://www.numpy.org/)
-- [Pandas](http://pandas.pydata.org)
-- [matplotlib](http://matplotlib.org/)
-- [scikit-learn](http://scikit-learn.org/stable/)
+## Visão Geral do Projeto
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
+Neste projeto, irei analisar o conjunto de dados de montantes de despesas anuais de vários clientes (reportados em unidades monetárias), coletados de clientes de uma distribuidora atacadista em Lisboa, para identificar segmentos de clientes ocultos nos dados. Primeiro, irei explorar os dados selecionando um pequeno subconjunto como amostra e determinar se alguma das categorias de produtos está altamente correlacionada com outra. Depois, pré-processarei os dados, dimensionando cada categoria de produto e identificando (e removendo) valores aberrantes. De posse dos dados "limpos", aplicarei PCA a eles e implementarei os algoritmos de clustering para criar os segmentos. Por último, irei comparar a segmentação encontrada com uma marcação adicional, afim de dar ao distribuidor discernimento sobre como melhor estruturar seu serviço de entrega de acordo com as necessidades de cada cliente.
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer. 
+### Dados
 
-### Code
+O conjunto de dados deste projeto pode ser encontrado no [Repositório de Machine Learning da UCI](https://archive.ics.uci.edu/ml/datasets/Wholesale+customers). Para efeitos de projeto, os atributos 'Channel' e 'Region' serão excluídos da análise – que focará então nas seis categorias de produtos registrados para clientes.
 
-Template code is provided in the `customer_segments.ipynb` notebook file. You will also be required to use the included `visuals.py` Python file and the `customers.csv` dataset file to complete your work. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project. Note that the code included in `visuals.py` is meant to be used out-of-the-box and not intended for students to manipulate. If you are interested in how the visualizations are created in the notebook, please feel free to explore this Python file.
-
-### Run
-
-In a terminal or command window, navigate to the top-level project directory `customer_segments/` (that contains this README) and run one of the following commands:
-
-```bash
-ipython notebook customer_segments.ipynb
-```  
-or
-```bash
-jupyter notebook customer_segments.ipynb
-```
-
-This will open the Jupyter Notebook software and project file in your browser.
-
-## Data
-
-The customer segments data is included as a selection of 440 data points collected on data found from clients of a wholesale distributor in Lisbon, Portugal. More information can be found on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Wholesale+customers).
-
-Note (m.u.) is shorthand for *monetary units*.
-
-**Features**
+**Atributos**
 1) `Fresh`: annual spending (m.u.) on fresh products (Continuous); 
 2) `Milk`: annual spending (m.u.) on milk products (Continuous); 
 3) `Grocery`: annual spending (m.u.) on grocery products (Continuous); 
@@ -47,3 +21,12 @@ Note (m.u.) is shorthand for *monetary units*.
 6) `Delicatessen`: annual spending (m.u.) on and delicatessen products (Continuous); 
 7) `Channel`: {Hotel/Restaurant/Cafe - 1, Retail - 2} (Nominal)
 8) `Region`: {Lisbon - 1, Oporto - 2, or Other - 3} (Nominal) 
+
+
+Este projeto requer **Python 3.6** e as seguintes bibliotecas Python instaladas:
+
+- [NumPy](http://www.numpy.org/)
+- [Pandas](http://pandas.pydata.org)
+- [matplotlib](http://matplotlib.org/)
+- [scikit-learn](http://scikit-learn.org/stable/)
+
